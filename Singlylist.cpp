@@ -1,16 +1,13 @@
-#include <iostream>
+#include<iostream>
 using namespace std;
 
-// Node structure
 struct Node {
     int data;
     Node* next;
 };
 
-// Head pointer
 Node* head = NULL;
 
-// Insert at beginning
 void insertAtBeginning(int value) {
     Node* newNode = new Node();
     newNode->data = value;
@@ -18,7 +15,6 @@ void insertAtBeginning(int value) {
     head = newNode;
 }
 
-// Insert at end
 void insertAtEnd(int value) {
     Node* newNode = new Node();
     newNode->data = value;
@@ -36,7 +32,6 @@ void insertAtEnd(int value) {
     temp->next = newNode;
 }
 
-// Delete first node
 void deleteFirst() {
     if (head == NULL) {
         cout << "List is empty" << endl;
@@ -47,7 +42,6 @@ void deleteFirst() {
     delete temp;
 }
 
-// Display linked list
 void display() {
     Node* temp = head;
     while (temp != NULL) {
@@ -72,4 +66,3 @@ int main() {
 
     return 0;
 }
-

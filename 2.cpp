@@ -1,32 +1,52 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
-// int main(){
-    
-//     int a = 10, b = 20;
 
-//     int avg = (a+b)/2;
+struct Node {
+    int data;
+    Node* next;
+};
 
-//     cout << "Average = " << avg;
-    
-//     return 0;
-// }
+// Function to display linked list
+void display(Node* head) {
+    while(head != NULL) {
+        cout << head->data << " -> ";
+        head = head->next;
+    }
+    cout << "NULL" << endl;
+}
 
-int main(){
+int main() {
+    Node *head = NULL, *newNode;
+    int n, value;
 
-    int a,b,c;
+    cout << "Enter number of nodes: ";
+    cin >> n;
 
-    cout<<"Enter the first number: ";
-    cin >> a;
-    
-    cout <<"Enter the Second number: ";
-    cin >> b;
+    // Creating initial linked list
+    for(int i = 1; i <= n; i++) {
+        newNode = new Node();
+        cout << "Enter data for node " << i << ": ";
+        cin >> value;
 
-    cout <<"Enter the Second number: ";
-    cin >> b;
-    int avg = (a+b)/2;
+        newNode->data = value;
+        newNode->next = head;
+        head = newNode;   // Insert at beginning while creating
+    }
 
-    cout << "Average = " << avg;
+    cout << "\nOriginal Linked List:\n";
+    display(head);
+
+    // Insert new node at beginning
+    cout << "\nEnter value to insert at beginning: ";
+    cin >> value;
+
+    newNode = new Node();
+    newNode->data = value;
+    newNode->next = head;
+    head = newNode;
+
+    cout << "\nUpdated Linked List:\n";
+    display(head);
 
     return 0;
 }
-
