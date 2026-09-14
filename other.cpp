@@ -23,7 +23,6 @@ public:
         head = NULL;
     }
 
-    
     void insertAtBeginning(int id, string name) {
         Node* newNode = new Node(id, name);
 
@@ -38,7 +37,6 @@ public:
         cout << "Reservation Added Successfully!\n";
     }
 
-    
     void displayForward() {
         Node* temp = head;
         cout << "\nVIP List (Forward):\n";
@@ -49,7 +47,6 @@ public:
         }
     }
 
-    
     void displayBackward() {
         Node* temp = head;
 
@@ -67,7 +64,6 @@ public:
         }
     }
 
-    
     void search(int id) {
         Node* temp = head;
 
