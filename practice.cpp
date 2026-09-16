@@ -1,75 +1,111 @@
-#include <iostream>
-using namespace std;
+// #include<iostream>
+// #include<vector>
+// using namespace std;
 
-#define MAX 50
+// int main(){
+//     int  n;
+//     cin >> n;
 
-int stack[MAX];
-int top = -1;
+//     vector<int> vec;
+
+//     for(int i=0; i<n; i++){
+//         int num;
+//         cin >> num;
+//         vec.push_back(num);
+//     }
+
+//     for(int i=0; i<vec.size(); i++){
+//         cout << vec[i] << " ";
+//     }
+
+//     return 0;
+// }
 
 
-bool isEmpty() {
-    return (top == -1);
-}
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+
+// int main (){
+//     int n;
+//     cin >> n;
+
+//     vector<int> vec;
+//     for(int i=0; i<n; i++){
+//        int num;
+//        cout << num;
+//        vec.push_back(num);
+//     }
+
+//     for(int i=0; i<vec.size(); i++){
+//         cout << vec[i] << " ";
+//     }
+
+//     return 0;
+// }
+
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+
+// int main(){
+//     int n;
+//     cin >> n;
+
+//     string name = " ";
+
+//     for(int i=0; i<n; i++){
+//         char ch;
+//         cin >> ch;
+//         name += ch;
+//     }
+
+//     cout << name;
+
+//     return 0;
+// }
+
+// #include <iostream>
+// #include <string>
+// using namespace std;
+
+// int main() {
+//     string input;
+//     cin >> input;
+
+//     string name = "";
+
+//     for (char ch : input) {
+//         if (ch != ',') {
+//             name += ch;
+//         }
+//     }
+
+//     cout << name;
+
+//     return 0;
+// }
+
+// #include<iostream>
+// #include<vector>
+// using namespace std;
+
+// int main(){
+//     vector<int> vec = {10,20,30,40,50};
+
+//     int i = 0;
+//     int j = vec.size() - 1;
+
+//     while(i<j){
+//         swap(vec[i], vec[j]);
+//         i++;
+//         j--;
+//     }
+
+//     for(int x : vec){
+//         cout << x << " ";
+//     }
+//     return 0;
+// }
 
 
-void push(int plate) {
-    if (top == MAX - 1) {
-        cout << "Stack Overflow! Cannot add more plates." << endl;
-    } else {
-        top++;
-        stack[top] = plate;
-        cout << "Plate " << plate << " pushed into stack." << endl;
-    }
-}
-
-/* Pop operation */
-void pop() {
-    if (isEmpty()) {
-        cout << "Stack Underflow! No plates to remove." << endl;
-    } else {
-        cout << "Plate " << stack[top] << " popped from stack." << endl;
-        top--;
-    }
-}
-
-int main() {
-    int choice, plate;
-
-    do {
-        cout << "\n--- Stack Menu (50 Plates) ---" << endl;
-        cout << "1. Push Plate" << endl;
-        cout << "2. Pop Plate" << endl;
-        cout << "3. Check Is Empty" << endl;
-        cout << "4. Exit" << endl;
-        cout << "Enter your choice: ";
-        cin >> choice;
-
-        switch (choice) {
-        case 1:
-            cout << "Enter plate number: ";
-            cin >> plate;
-            push(plate);
-            break;
-
-        case 2:
-            pop();
-            break;
-
-        case 3:
-            if (isEmpty())
-                cout << "Stack is Empty." << endl;
-            else
-                cout << "Stack is NOT Empty." << endl;
-            break;
-
-        case 4:
-            cout << "Exiting program." << endl;
-            break;
-
-        default:
-            cout << "Invalid choice!" << endl;
-        }
-    } while (choice != 4);
-
-    return 0;
-}
